@@ -3,6 +3,7 @@ package com.example.services;
 import com.example.exceptions.PostNotFoundException;
 import com.example.model.Author;
 import com.example.model.Post;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -11,6 +12,8 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
+
+@Slf4j
 @Service
 public class PostService {
 
@@ -45,8 +48,11 @@ public class PostService {
      * Load post content from DB *Long running method
      */
     public Post getPostByID(String postID) throws PostNotFoundException {
+
+        log.debug("[Get Post by PostId - {}]", postID);
+
         try {
-            TimeUnit.SECONDS.sleep(1);
+            TimeUnit.SECONDS.sleep(3);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -62,7 +68,7 @@ public class PostService {
      */
     public List<Post> getTopPosts() {
         try {
-            TimeUnit.SECONDS.sleep(1);
+            TimeUnit.SECONDS.sleep(3);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
