@@ -54,6 +54,9 @@ public class PostController {
     @GetMapping("/top/evict")
     public void evictTopPosts() {
         log.info("Evict post-top");
+
+
+
     }
 
 }
