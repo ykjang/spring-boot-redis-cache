@@ -13,14 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 @ControllerAdvice
 public class PostExceptionHandler {
 
-
-
-
-
-
-
-
-
     private Logger log = LoggerFactory.getLogger(PostExceptionHandler.class);
 
     @ResponseStatus(value = HttpStatus.NOT_FOUND, reason = "Post Not Found")
